@@ -2,7 +2,7 @@ const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "USD",
+  currency: "INR",
   signDisplay: "always",
 });
 
@@ -47,11 +47,11 @@ function renderList() {
 
     li.innerHTML = `
       <div class="name">
-        <h4>${name}</h4>
-        <p>${new Date(date).toLocaleDateString()}</p>
+        <h4>₹{name}</h4>
+        <p>₹{new Date(date).toLocaleDateString()}</p>
       </div>
 
-      <div class="amount ${type}">
+      <div class="amount ₹{type}">
         <span>${formatter.format(amount * sign)}</span>
       </div>
     
